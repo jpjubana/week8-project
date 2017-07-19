@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>Stat Tracker</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div class="container" ng-controller="appControl">
+        <h1>Trackin' on em.</h1>
+        <h4>What activity would you like to track?</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Activity</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input class="form-control" ng-model="activity.date" placeholder="00/00/00"></td>
+                    <td><input class="form-control" ng-model="activity.name" placeholder="Squats"></td>
+                    <td><input class="form-control" ng-model="activity.stat" placeholder="145lbs @ 3x10"></td>
+                    <td><button class="btn btn-primary" ng-click="addStat()">Add Activity</button></td>
+                    <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="clear()">Clear</button></td>
+                </tr>
+                <tr ng-repeat="activity in activityList">
+                    <td>{{activity.date}}</td>
+                    <td>{{activity.name}}</td>
+                    <td>{{activity.stat}}</td>
+                    <td><button class="btn btn-danger" ng-click="remove(activity._id)">Remove</button></td>
+                    <td><button class="btn btn-warning" ng-click="edit(activity._id)">Edit Activity</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js ">
+    </script>
+    <script src="controllers/controller.js "></script>
+</body>
+
+</html>

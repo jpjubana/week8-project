@@ -1,0 +1,20 @@
+{
+    "name": "week7-projectMEAN",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bluebird": "^3.5.0",
+        "express": "^4.15.3",
+        "mongodb": "^2.2.30",
+        "mongoose": "^4.11.2",
+        "body-parser": "^1.17.2"
+    }
+}
